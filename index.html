@@ -1,0 +1,1101 @@
+<!--
+==================================================
+ULTRA LUXURY EDGE GROUP WEBSITE
+ALL-IN-ONE INDEX.HTML
+==================================================
+FEATURES:
+✔ Cinematic video hero
+✔ Gold particles
+✔ Luxury animations
+✔ Glassmorphism
+✔ 3D cards
+✔ Scroll reveal
+✔ Progress bar
+✔ Premium loader
+✔ Counter animations
+✔ Floating contact buttons
+✔ Parallax sections
+✔ Luxury gallery
+✔ Mouse glow
+✔ Auto hero text slider
+✔ Fullscreen mobile responsive
+✔ Premium hover effects
+✔ One file only
+==================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EDGE GROUP CORP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ======================================
+RESET
+====================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#000;
+color:white;
+overflow-x:hidden;
+cursor:none;
+}
+
+/* ======================================
+CUSTOM CURSOR
+====================================== */
+
+.cursor{
+position:fixed;
+width:25px;
+height:25px;
+border:2px solid #d4a74d;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:999999;
+transition:.05s;
+box-shadow:0 0 20px rgba(212,167,77,.6);
+}
+
+/* ======================================
+SCROLLBAR
+====================================== */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:black;
+}
+
+::-webkit-scrollbar-thumb{
+background:#d4a74d;
+border-radius:20px;
+}
+
+/* ======================================
+PROGRESS BAR
+====================================== */
+
+.progress-bar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:linear-gradient(to right,#b8860b,#ffd700,#b8860b);
+z-index:999999;
+}
+
+/* ======================================
+LOADER
+====================================== */
+
+.loader{
+position:fixed;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999999;
+animation:loaderFade 1s ease forwards;
+animation-delay:4s;
+}
+
+.loader h1{
+font-size:6rem;
+font-family:'Cinzel',serif;
+letter-spacing:12px;
+
+background:linear-gradient(to right,#8b6508,#ffd700,#8b6508);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:pulse 2s infinite;
+}
+
+.loader p{
+margin-top:20px;
+letter-spacing:6px;
+color:#777;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+@keyframes loaderFade{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* ======================================
+PARTICLES
+====================================== */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+overflow:hidden;
+}
+
+.particles span{
+position:absolute;
+display:block;
+width:5px;
+height:5px;
+background:#d4a74d;
+border-radius:50%;
+opacity:.2;
+animation:particleFloat 12s linear infinite;
+}
+
+@keyframes particleFloat{
+0%{
+transform:translateY(100vh) scale(0);
+}
+100%{
+transform:translateY(-10vh) scale(1.5);
+}
+}
+
+/* ======================================
+HEADER
+====================================== */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+transition:.5s;
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(10px);
+}
+
+header.scrolled{
+background:rgba(0,0,0,.88);
+padding:18px 8%;
+box-shadow:0 0 30px rgba(0,0,0,.5);
+}
+
+.logo{
+font-size:2rem;
+font-family:'Cinzel',serif;
+font-weight:700;
+letter-spacing:5px;
+
+background:linear-gradient(to right,#b8860b,#fff0b3,#b8860b);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:35px;
+font-weight:500;
+position:relative;
+transition:.4s;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:-8px;
+left:0;
+width:0%;
+height:2px;
+background:#d4a74d;
+transition:.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+nav a:hover{
+color:#d4a74d;
+}
+
+/* ======================================
+HERO
+====================================== */
+
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.72);
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+padding:0 20px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero img{
+width:190px;
+margin-bottom:30px;
+filter:drop-shadow(0 0 25px rgba(212,167,77,.5));
+}
+
+.hero h1{
+font-size:6rem;
+max-width:1200px;
+line-height:1.1;
+margin:auto;
+font-weight:900;
+
+background:linear-gradient(to right,#b8860b,#fff0b3,#b8860b);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:25px;
+font-size:1.2rem;
+letter-spacing:5px;
+color:#ddd;
+}
+
+.hero-buttons{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+/* ======================================
+BUTTONS
+====================================== */
+
+.btn{
+padding:18px 50px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.5s;
+position:relative;
+overflow:hidden;
+}
+
+.btn-gold{
+background:#d4a74d;
+color:black;
+}
+
+.btn-outline{
+border:2px solid #d4a74d;
+color:#d4a74d;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+box-shadow:0 0 35px rgba(212,167,77,.5);
+}
+
+/* ======================================
+SECTION
+====================================== */
+
+section{
+padding:120px 8%;
+position:relative;
+z-index:2;
+}
+
+.section-title{
+font-size:4rem;
+text-align:center;
+margin-bottom:25px;
+font-family:'Cinzel',serif;
+
+background:linear-gradient(to right,#b8860b,#fff0b3,#b8860b);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-text{
+max-width:950px;
+margin:auto;
+text-align:center;
+line-height:2;
+color:#aaa;
+}
+
+/* ======================================
+SERVICES
+====================================== */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
+margin-top:80px;
+}
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+padding:50px 35px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+transition:.6s;
+transform-style:preserve-3d;
+}
+
+.card:hover{
+transform:rotateY(8deg) translateY(-10px);
+border-color:#d4a74d;
+box-shadow:0 0 35px rgba(212,167,77,.2);
+}
+
+.card h3{
+font-size:2rem;
+margin-bottom:20px;
+color:#d4a74d;
+}
+
+.card p{
+line-height:1.9;
+color:#aaa;
+}
+
+/* ======================================
+PARALLAX SECTION
+====================================== */
+
+.parallax{
+height:70vh;
+
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.parallax h2{
+font-size:5rem;
+font-family:'Cinzel',serif;
+
+background:linear-gradient(to right,#b8860b,#fff0b3,#b8860b);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* ======================================
+PROJECTS
+====================================== */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-top:80px;
+}
+
+.project{
+position:relative;
+overflow:hidden;
+border-radius:30px;
+}
+
+.project img{
+width:100%;
+height:450px;
+object-fit:cover;
+transition:.8s;
+}
+
+.project:hover img{
+transform:scale(1.1);
+}
+
+.project-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to top,rgba(0,0,0,.9),transparent);
+display:flex;
+align-items:flex-end;
+padding:40px;
+opacity:0;
+transition:.5s;
+}
+
+.project:hover .project-overlay{
+opacity:1;
+}
+
+.project-overlay h3{
+font-size:2rem;
+}
+
+/* ======================================
+STATS
+====================================== */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
+margin-top:80px;
+}
+
+.stat-box{
+background:#0a0a0a;
+padding:45px;
+border-radius:30px;
+text-align:center;
+border:1px solid #151515;
+}
+
+.stat-box h2{
+font-size:4rem;
+color:#d4a74d;
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:#888;
+letter-spacing:3px;
+}
+
+/* ======================================
+TESTIMONIALS
+====================================== */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+margin-top:80px;
+}
+
+.testimonial{
+background:#0a0a0a;
+padding:40px;
+border-radius:30px;
+border:1px solid #151515;
+}
+
+.testimonial p{
+line-height:1.9;
+color:#aaa;
+}
+
+.testimonial h4{
+margin-top:25px;
+color:#d4a74d;
+}
+
+/* ======================================
+CONTACT
+====================================== */
+
+.contact{
+text-align:center;
+}
+
+.contact-buttons{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+/* ======================================
+FOOTER
+====================================== */
+
+footer{
+padding:45px;
+text-align:center;
+border-top:1px solid #111;
+background:#050505;
+color:#666;
+}
+
+/* ======================================
+FLOATING BUTTONS
+====================================== */
+
+.floating{
+position:fixed;
+right:25px;
+bottom:25px;
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:999;
+}
+
+.float-btn{
+width:60px;
+height:60px;
+border-radius:50%;
+background:#d4a74d;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+font-size:1.4rem;
+font-weight:900;
+color:black;
+box-shadow:0 0 25px rgba(212,167,77,.5);
+transition:.4s;
+}
+
+.float-btn:hover{
+transform:scale(1.1);
+}
+
+/* ======================================
+REVEAL
+====================================== */
+
+.reveal{
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(60px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ======================================
+MOBILE
+====================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2.5rem;
+}
+
+.parallax h2{
+font-size:3rem;
+}
+
+nav{
+display:none;
+}
+
+section{
+padding:90px 6%;
+}
+
+body{
+cursor:auto;
+}
+
+.cursor{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="loader">
+<h1>EDGE GROUP</h1>
+<p>LUXURY CONSTRUCTION</p>
+</div>
+
+<div class="particles">
+
+<span style="left:10%;animation-delay:0s;"></span>
+<span style="left:20%;animation-delay:2s;"></span>
+<span style="left:30%;animation-delay:4s;"></span>
+<span style="left:40%;animation-delay:1s;"></span>
+<span style="left:50%;animation-delay:5s;"></span>
+<span style="left:60%;animation-delay:3s;"></span>
+<span style="left:70%;animation-delay:6s;"></span>
+<span style="left:80%;animation-delay:2s;"></span>
+<span style="left:90%;animation-delay:4s;"></span>
+
+</div>
+
+<header id="header">
+
+<div class="logo">
+EDGE GROUP
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#stats">Company</a>
+<a href="#testimonials">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+<source src="https://cdn.coverr.co/videos/coverr-construction-site-1560081897266?download=1080p" type="video/mp4">
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<img src="logo.png">
+
+<h1 id="heroTitle">
+LUXURY COMMERCIAL CONSTRUCTION
+</h1>
+
+<p>
+FORMWORK • STEELFIXING • CONCRETE
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn btn-gold">
+VIEW PROJECTS
+</a>
+
+<a href="#contact" class="btn btn-outline">
+GET A QUOTE
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="reveal">
+
+<h2 class="section-title">
+About EDGE GROUP
+</h2>
+
+<p class="section-text">
+
+EDGE GROUP CORP delivers elite formwork, steelfixing and concrete solutions
+across Sydney’s premium commercial and residential developments.
+Focused on precision, safety and high-end craftsmanship,
+we create luxury construction outcomes at every level.
+
+</p>
+
+</section>
+
+<section id="services" class="reveal">
+
+<h2 class="section-title">
+Our Services
+</h2>
+
+<div class="services-grid">
+
+<div class="card">
+<h3>Formwork</h3>
+<p>
+Advanced formwork systems engineered for precision,
+performance and premium structural execution.
+</p>
+</div>
+
+<div class="card">
+<h3>Steelfixing</h3>
+<p>
+Professional reinforcement installation delivered
+to the highest commercial standards.
+</p>
+</div>
+
+<div class="card">
+<h3>Concrete</h3>
+<p>
+Luxury-grade concrete placement providing durability,
+strength and flawless finishes.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="parallax">
+
+<h2>
+BUILDING THE FUTURE
+</h2>
+
+</section>
+
+<section id="projects" class="reveal">
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+<div class="gallery">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop">
+<div class="project-overlay">
+<h3>Commercial Tower</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop">
+<div class="project-overlay">
+<h3>Luxury Development</h3>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2000&auto=format&fit=crop">
+<div class="project-overlay">
+<h3>Structural Concrete</h3>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="stats" class="reveal">
+
+<h2 class="section-title">
+Why Choose EDGE
+</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2 class="counter" data-target="15">0</h2>
+<p>YEARS EXPERIENCE</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="250">0</h2>
+<p>PROJECTS COMPLETED</p>
+</div>
+
+<div class="stat-box">
+<h2 class="counter" data-target="100">0</h2>
+<p>QUALITY FOCUSED</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="testimonials" class="reveal">
+
+<h2 class="section-title">
+Client Reviews
+</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+“EDGE GROUP delivered exceptional quality and professionalism
+from start to finish.”
+</p>
+<h4>Luxury Developments</h4>
+</div>
+
+<div class="testimonial">
+<p>
+“Premium workmanship, elite project management
+and flawless execution.”
+</p>
+<h4>Commercial Builder</h4>
+</div>
+
+<div class="testimonial">
+<p>
+“One of the most professional construction teams
+we’ve worked with.”
+</p>
+<h4>Property Group</h4>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact reveal">
+
+<h2 class="section-title">
+Contact EDGE GROUP
+</h2>
+
+<p class="section-text">
+Sydney • Australia
+</p>
+
+<div class="contact-buttons">
+
+<a href="#" class="btn btn-gold">
+CALL NOW
+</a>
+
+<a href="#" class="btn btn-outline">
+INSTAGRAM
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 EDGE GROUP CORP — ALL RIGHTS RESERVED
+
+</footer>
+
+<div class="floating">
+
+<a href="#" class="float-btn">☎</a>
+<a href="#" class="float-btn">✉</a>
+
+</div>
+
+<script>
+
+/* =========================
+CUSTOM CURSOR
+========================= */
+
+const cursor=document.querySelector('.cursor');
+
+document.addEventListener('mousemove',(e)=>{
+
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+
+});
+
+/* =========================
+HEADER SCROLL
+========================= */
+
+window.addEventListener("scroll",function(){
+
+const header=document.getElementById("header");
+
+header.classList.toggle("scrolled",window.scrollY>50);
+
+});
+
+/* =========================
+SCROLL PROGRESS
+========================= */
+
+window.onscroll=function(){
+
+let winScroll=document.body.scrollTop || document.documentElement.scrollTop;
+
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+let scrolled=(winScroll/height)*100;
+
+document.getElementById("progressBar").style.width=scrolled+"%";
+
+};
+
+/* =========================
+REVEAL
+========================= */
+
+function reveal(){
+
+let reveals=document.querySelectorAll(".reveal");
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight;
+
+let revealTop=reveals[i].getBoundingClientRect().top;
+
+let revealPoint=100;
+
+if(revealTop<windowHeight-revealPoint){
+
+reveals[i].classList.add("active");
+
+}
+
+}
+
+}
+
+window.addEventListener("scroll",reveal);
+
+/* =========================
+COUNTERS
+========================= */
+
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+counter.innerText='0';
+
+const updateCounter=()=>{
+
+const target=+counter.getAttribute('data-target');
+
+const c=+counter.innerText;
+
+const increment=target/100;
+
+if(c<target){
+
+counter.innerText=`${Math.ceil(c+increment)}`;
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+updateCounter();
+
+});
+
+/* =========================
+AUTO HERO TEXT
+========================= */
+
+const heroTitle=document.getElementById("heroTitle");
+
+const texts=[
+
+"LUXURY COMMERCIAL CONSTRUCTION",
+"PREMIUM STRUCTURAL SOLUTIONS",
+"BUILDING THE FUTURE",
+"ELITE CONCRETE & FORMWORK"
+
+];
+
+let textIndex=0;
+
+setInterval(()=>{
+
+textIndex=(textIndex+1)%texts.length;
+
+heroTitle.style.opacity=0;
+
+setTimeout(()=>{
+
+heroTitle.innerText=texts[textIndex];
+
+heroTitle.style.opacity=1;
+
+},500);
+
+},4000);
+
+</script>
+
+</body>
+</html>
+
+
+
